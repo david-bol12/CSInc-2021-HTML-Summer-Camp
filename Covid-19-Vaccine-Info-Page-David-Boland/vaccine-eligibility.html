@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Check Eligibility - Covid Vaccine</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="coronavirus.png">
+  </head>
+  <body>
+    <script src="script.js">
+    </script>
+    <div class="pageheader">
+      <h1>
+        <a href="index.html" style="text-decoration:none;">
+          <img class="covid-icon" src="covid-19.png" alt="Covid Icon" >
+        </a> 
+        Covid-19 Vaccine Info</h1>
+    </div>
+    <ul class="navbarurls">
+      <div class="navbar">
+        <li class="navbarblock" ><a href="index.html">Home</a></li>
+        <li class="navbarblock"><a href="news.html">News</a></li>
+        <li class="navbarblock"><a href="roll-out.html">Roll-Out</a></li>
+        <li class="navbarblock"><a href="sideaffects.html">Side Effects</a></li>
+        <li class="navbarblock"><a href="vaccine-eligibility.html" style="background-color: rgba(106, 157, 235, 0.842);">Check your Vaccine Eligiblitiy</a></li>
+      </div>
+    </ul>
+    <div class="textblocks" style="align-self: center; margin-right:20px; margin-left:100px; padding-right:200px;padding-left: 40px;" id="formdiv">
+      <h2>Check If you Are Eligible for the Covid-19 Vaccine By Filling In this Form:</h2>
+      <form>
+              <!-- Name -->
+        <label for="Name" class="main-p ">Firstname:</label> 
+        <br>
+        <input type="text" id="namebox" class="textbox" maxlength="40" value="">
+        <br>
+        <label for="Name" class="boxlabels" id="namelabel">*Please enter your Firstname</label>
+        <br>
+          <!-- DOB -->
+        <label for="Date of Birth" class="main-p ">Date of Birth:</label>
+        <br>
+        <input type="date" class="datebox" id="dobbox" >
+        <br>
+        <label for="Date of Birth" class="boxlabels" id="datelabel">*Please enter a valid Date of Birth</label>
+        <br>
+          <!-- Gender -->
+        <label for="Gender" class="main-p ">Gender:</label>
+        <br>
+        <select name="province" id="gender" class="textbox" style="margin-left:100px; width:300px; margin-top:10px;">
+          <option value="No Input" style="color: gray;">Select Gender</option>
+          <option value="male" >Male</option>
+          <option value="female">Female</option>
+        </select>
+        <br>
+       
+        <label for="Gender" class="boxlabels" id="genderlabel">*Please select a gender</label>
+        <br>
+          <!-- Health Conditions -->
+        <label for="" class="main-p">Please Tick the corresponding Box(es) if either Statement Applies to You: </label>
+       <br><br>
+        <label for="healthconditions" class="main-p ">Do you have any underlying health conditions which cause <br> breathing difficulties or give you an increased risk from Covid-19?</label> <input type="checkbox" class="checkboxselect" id="healthconditions">
+        <br> <br>
+        <label for="healthworker" class="main-p">Are you a healthcare worker?</label> <input type="checkbox" class="checkboxselect" id="healthworker">
+        <br> <br>
+        <input type="button" class="button" onclick="getResults();" value="Submit">
+        <input type="reset" class="button">
+      </form>
+    </div>
+    <div class="textblocks" style="align-self: center; margin-right:20px; margin-left:100px; padding-right:200px;padding-left: 40px; display:none;" id="resultsdiv">
+      <h2>Results:</h2>
+      <ul class="main-p">
+        <li id="name"></li>
+        <li id="timeresult"></li>
+      </ul>
+    </div>
+    <footer class="footer" style="margin-top: 600px;"></footer>
+  </body>
+</html>
